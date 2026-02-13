@@ -1,0 +1,6 @@
+#!/bin/bash
+
+source versions
+
+wget https://repo1.maven.org/maven2/com/google/errorprone/error_prone_core/${EP_VERSION?}/error_prone_core-${EP_VERSION?}-with-dependencies.jar
+wget https://repo1.maven.org/maven2/io/github/eisop/dataflow-errorprone/${DATAFLOW_VERSION?}/dataflow-errorprone-${DATAFLOW_VERSION?}.jar

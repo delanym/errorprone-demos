@@ -1,0 +1,5 @@
+#!/bin/bash
+
+export EP_VERSION=2.47.0
+export DATAFLOW_VERSION=3.41.0-eisop1 
+

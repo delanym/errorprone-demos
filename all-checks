@@ -1,0 +1,18 @@
+#!/bin/bash
+set -e
+
+# 1. Run prerequisites
+./pre-requisites
+
+# 2. Loop over bugpatterns listed in 'checklist'
+while read -r bugpattern; do
+    # Skip empty lines or comments
+    [[ -z "$bugpattern" || "$bugpattern" =~ ^# ]] && continue
+
+    ./check-ep.sh "$bugpattern" "bugpatterns/${bugpattern}.java"
+done < checklist
+
+# 3. Clean up compiled classes
+rm -f bugpatterns/*.class
+
+
